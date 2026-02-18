@@ -218,10 +218,10 @@ management_group_settings = {
     */
   }
   subscription_placement = {
-    identity = {
-      subscription_id       = "$${subscription_id_identity}"
-      management_group_name = "identity"
-    }
+    # identity and security removed because they share the same subscription ID
+    # as management. The ALZ module requires each subscription ID to appear only once.
+    # If you later provision separate subscriptions for identity and security,
+    # add them back here with their unique subscription IDs.
     connectivity = {
       subscription_id       = "$${subscription_id_connectivity}"
       management_group_name = "connectivity"
@@ -229,10 +229,6 @@ management_group_settings = {
     management = {
       subscription_id       = "$${subscription_id_management}"
       management_group_name = "management"
-    }
-    security = {
-      subscription_id       = "$${subscription_id_security}"
-      management_group_name = "security"
     }
   }
   policy_assignments_to_modify = {
