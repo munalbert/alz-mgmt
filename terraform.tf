@@ -22,7 +22,8 @@ terraform {
 }
 
 provider "alz" {
-  library_overwrite_enabled = true
+  library_overwrite_enabled                = true
+  suppress_warning_policy_role_assignments = true
   library_references = [
     {
       custom_url = "${path.root}/lib"
